@@ -7,9 +7,9 @@
     align-items: center;
 }
 
-.presentation {
+.section {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     position: relative;
     &:not(:last-child) {
         &::before {
@@ -23,4 +23,9 @@
             border: 1px solid transparent;
         }
     }
+}
+
+.presentation {
+    @extend .section;
+    height: 100vh;
 }
