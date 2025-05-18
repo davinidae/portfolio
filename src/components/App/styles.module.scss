@@ -5,6 +5,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    & > * {
+        @extend .section;
+    }
 }
 
 .section {
@@ -23,9 +26,4 @@
             border: 1px solid transparent;
         }
     }
-}
-
-.presentation {
-    @extend .section;
-    height: 100vh;
 }

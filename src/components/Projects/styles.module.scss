@@ -2,9 +2,8 @@
     width: 100vw;
     height: 50vh;
     display: flex;
+    padding: 1rem 0;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -17,78 +16,113 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 0;
     & > * {
-        text-align: center;
-        color: rgb(255, 255, 255);
-    }
-    & h2 {
-        margin: 0 0 1rem 0;
-        text-transform: uppercase;
-        font-size: 3rem;
-        font-weight: bolder;
-    }
-    & h3 {
-        margin: 0 0 2.5rem 0;
-        text-transform: uppercase;
-        font-size: 1rem;
-        font-weight: bolder;
-        font-style: italic;
-        &::before {
-            content: '"';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        &[id='background'] {
+            transform: translate(50%, 0);
+            width: auto;
+            aspect-ratio: 1 / 1;
+            z-index: -1;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.7);
         }
-        &::after {
-            content: '"';
+        &[id='text'] {
+            transform: translate(10%, 0);
+            width: 90%;
+            z-index: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: rgb(255, 255, 255);
+            & > * {
+                width: fit-content;
+                text-align: center;
+            }
+            & h2 {
+                margin: 0 0 1rem 0;
+                text-transform: uppercase;
+                font-size: 3rem;
+                font-weight: bolder;
+            }
+            & h3 {
+                margin: 0 0 2.5rem 0;
+                text-transform: uppercase;
+                font-size: 1rem;
+                font-weight: bolder;
+                font-style: italic;
+                &::before {
+                    content: '"';
+                }
+                &::after {
+                    content: '"';
+                }
+            }
+            & p {
+                height: fit-content;
+                text-justify: inter-word;
+                font-size: 1.25rem;
+                line-height: 2rem;
+            }
         }
-    }
-    & p {
-        margin: 0;
-        width: 90%;
-        height: fit-content;
-        text-justify: inter-word;
-        font-size: 1.25rem;
-        line-height: 2rem;
     }
 }
 
 .screen-section {
     flex: 2 0 0;
-    width: 100%;
+    width: auto;
     height: 100%;
-    position: relative;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --margin: 1rem;
     & > * {
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
-        z-index: 0;
-    }
-    & a {
-        z-index: 1;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-    iframe {
-        width: calc(100% - 2rem);
-        height: calc(100% - 2rem);
-        border: none;
+        aspect-ratio: 16 / 9;
+        height: calc(100% - calc(var(--margin) * 2));
+        margin: var(--margin);
         border: 1px solid transparent;
-        border-radius: 1rem;
-        margin: 1rem;
+        border-radius: var(--margin);
         box-shadow:
-            1rem 1rem 0 rgba(0, 0, 0, 0.2),
-            -1rem -1rem 0 rgba(255, 255, 255, 0.2),
-            -1rem 1rem 0 rgba(255, 255, 255, 0.2),
-            1rem -1rem 0 rgba(0, 0, 0, 0.2);
+            var(--margin) var(--margin) 0 rgba(0, 0, 0, 0.2),
+            calc(-1 * var(--margin)) calc(-1 * var(--margin)) 0 rgba(255, 255, 255, 0.2),
+            calc(-1 * var(--margin)) var(--margin) 0 rgba(255, 255, 255, 0.2),
+            var(--margin) calc(-1 * var(--margin)) 0 rgba(0, 0, 0, 0.2);
+        & > * {
+            border: 1px solid transparent;
+            border-radius: var(--margin);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+        & a {
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        & iframe {
+            border: none;
+        }
     }
 }
 
 .section {
-    width: 100vw;
-    height: auto;
+    width: 100%;
+    height: 100%;
     position: relative;
     display: flex;
     flex-direction: row;

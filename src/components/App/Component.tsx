@@ -13,7 +13,7 @@ export default class App extends Component<Props, State> {
     render() {
         return (
             <div className={styles.root}>
-                <div className={styles.presentation} id={'home'}>
+                <div id={'home'}>
                     <Presentation />
                 </div>
                 <div id={'webs'}>
