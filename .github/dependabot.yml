@@ -9,7 +9,7 @@ updates:
           - '/'
       schedule:
           interval: 'daily'
-      #   day: ''
+          #   day: ''
           time: '08:00'
           timezone: 'Europe/Madrid'
       # allow:
@@ -25,7 +25,8 @@ updates:
               patterns:
                   - '*'
       ignore:
-         - dependency-name: 'eslint'
+          - dependency-name: 'eslint'
+          - dependency-name: 'sass'
       #     versions: ['']
       #     update-types: ['']
       # insecure-external-code-execution: allow

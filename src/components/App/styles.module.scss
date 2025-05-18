@@ -5,11 +5,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    & > * {
+        @extend .section;
+    }
 }
 
-.presentation {
+.section {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     position: relative;
     &:not(:last-child) {
         &::before {
