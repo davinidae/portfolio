@@ -23,7 +23,6 @@ export default class Projects extends Component<Props, State> {
                     );
                     const resumeItem = (
                         <div id={'resume'}>
-                            <div id={'background'} />
                             <div id={'text'}>
                                 <h2>
                                     {type === ProjectType.WEB ? ['<', title, '/>'].join('') : title}
