@@ -1,5 +1,6 @@
 import type { connector } from '.';
 import type { ConnectedProps } from 'react-redux';
+import type { ProjectType } from './types.enum';
 
 export type OwnProps = {
     data: {
@@ -10,12 +11,6 @@ export type OwnProps = {
         description: string[];
     }[];
 };
-
-export enum ProjectType {
-    WEB = 'web',
-    DESKTOP = 'desktop',
-    MOBILE = 'mobile'
-}
 
 export type Props = OwnProps & ConnectedProps<typeof connector>;
 
