@@ -45,7 +45,7 @@
         "@typescript-eslint/parser": "^8.31.0",
         "@typescript-eslint/utils": "^8.9.0",
         "@vitejs/plugin-react-swc": "^4.3.1",
-        "@vitest/browser": "^4.1.8",
+        "@vitest/browser": "^4.1.10",
         "@vitest/coverage-v8": "^4.1.8",
         "@vitest/coverage-istanbul": "^4.1.8",
         "@vitest/ui": "^4.1.8",
