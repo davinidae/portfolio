@@ -3,7 +3,7 @@ import Presentation from '../Presentation';
 import styles from './styles.module.scss';
 import type { Props, State } from './types';
 import Projects from '../Projects';
-import { ProjectType } from '../Projects/types';
+import { ProjectType } from '../Projects/types.enum';
 
 export default class App extends Component<Props, State> {
     state: State = {

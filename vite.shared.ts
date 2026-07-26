@@ -1,26 +1,33 @@
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import checker from 'vite-plugin-checker';
 import { type UserConfig } from 'vite';
 import fullReload from 'vite-plugin-full-reload';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import fs from 'node:fs';
+
+const packageJson = JSON.parse(
+    fs.readFileSync('package.json', {
+        encoding: 'utf-8'
+    })
+);
+
+function getPackageField(field: 'version' | 'date'): string {
+    return typeof packageJson[field] === 'string' ? packageJson[field] : '';
+}
 
 const config: UserConfig = {
     resolve: {
-        extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.d.ts']
+        extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.d.ts'],
+        tsconfigPaths: true
     },
     // clear screen is needed for styles to be reloaded properly
     clearScreen: true,
     base: './',
-    esbuild: {
-        jsxFactory: 'h',
-        jsxFragment: 'Fragment',
-        jsxInject: `import React from 'react'`
-    },
     define: {
-        global: {}
+        global: {},
+        __APP_VERSION__: JSON.stringify(getPackageField('version')),
+        __APP_BUILD_DATE__: JSON.stringify(getPackageField('date'))
     },
     plugins: [
-        tsconfigPaths(),
         react({}),
         checker({
             eslint: {

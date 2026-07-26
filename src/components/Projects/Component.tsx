@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import styles from './styles.module.scss';
-import { ProjectType, type Props, type State } from './types';
+import type { Props, State } from './types';
+import { ProjectType } from './types.enum';
 
 export default class Projects extends Component<Props, State> {
     state: State = {

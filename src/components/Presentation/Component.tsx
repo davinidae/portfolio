@@ -5,7 +5,7 @@ import { Categories } from '.';
 import {
     SiAngular,
     SiCplusplus,
-    SiCss3,
+    SiCss,
     SiDjango,
     SiDocker,
     SiExpress,
@@ -47,7 +47,7 @@ export default class App extends Component<Props, State> {
         },
         {
             name: 'css3',
-            Element: <SiCss3 />
+            Element: <SiCss />
         },
         {
             name: 'javascript',

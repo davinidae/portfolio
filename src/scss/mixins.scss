@@ -1,34 +1,36 @@
+@use 'sass:map';
+
 @mixin var-from-queries($var, $query, $map) {
-    #{$var}: map-get($map, default);
+    #{$var}: map.get($map, default);
     @media (#{$query}: 280px) {
-        #{$var}: map-get($map, 280px);
+        #{$var}: map.get($map, 280px);
     }
     @media (#{$query}: 360px) {
-        #{$var}: map-get($map, 360px);
+        #{$var}: map.get($map, 360px);
     }
     @media (#{$query}: 393px) {
-        #{$var}: map-get($map, 393px);
+        #{$var}: map.get($map, 393px);
     }
     @media (#{$query}: 540px) {
-        #{$var}: map-get($map, 540px);
+        #{$var}: map.get($map, 540px);
     }
     @media (#{$query}: 768px) {
-        #{$var}: map-get($map, 768px);
+        #{$var}: map.get($map, 768px);
     }
     @media (#{$query}: 820px) {
-        #{$var}: map-get($map, 820px);
+        #{$var}: map.get($map, 820px);
     }
     @media (#{$query}: 912px) {
-        #{$var}: map-get($map, 912px);
+        #{$var}: map.get($map, 912px);
     }
     @media (#{$query}: 1024px) {
-        #{$var}: map-get($map, 1024px);
+        #{$var}: map.get($map, 1024px);
     }
     @media (#{$query}: 1280px) {
-        #{$var}: map-get($map, 1280px);
+        #{$var}: map.get($map, 1280px);
     }
     @media (#{$query}: 1900px) {
-        #{$var}: map-get($map, 1900px);
+        #{$var}: map.get($map, 1900px);
     }
 }
 
