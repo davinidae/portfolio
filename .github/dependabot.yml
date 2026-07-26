@@ -4,7 +4,6 @@
 version: 2
 updates:
     - package-ecosystem: 'npm'
-      #directory: '/'
       directories:
           - '/'
       schedule:
@@ -12,35 +11,25 @@ updates:
           #   day: ''
           time: '08:00'
           timezone: 'Europe/Madrid'
-      # allow:
-      #   - dependency-name: ''
-      #   - dependency-type: ''
       assignees:
           - 'elPandaFriki'
       commit-message:
           prefix: 'npm'
-      # enable-beta-ecosystems: true
       groups:
           dev-deps:
               patterns:
                   - '*'
       ignore:
           - dependency-name: 'eslint'
+          - dependency-name: 'vite-plugin-checker'
+          - dependency-name: 'eslint-plugin-react-refresh'
           - dependency-name: 'sass'
-      #     versions: ['']
-      #     update-types: ['']
-      # insecure-external-code-execution: allow
       labels:
           - 'npm'
           - 'dependencies'
-      # milestone: ''
       open-pull-requests-limit: 1000
       pull-request-branch-name:
           separator: '/'
       rebase-strategy: 'auto'
-      # registries: '*'
-      reviewers:
-          - 'elPandaFriki'
       target-branch: 'master'
-      # vendor: true
       versioning-strategy: 'auto'
