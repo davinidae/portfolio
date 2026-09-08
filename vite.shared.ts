@@ -36,7 +36,7 @@ const config: UserConfig = {
             typescript: true
         }),
         fullReload('./**/*', {
-            root: __dirname,
+            root: import.meta.dirname,
             delay: 0,
             always: true
         })

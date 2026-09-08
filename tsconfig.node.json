@@ -5,7 +5,9 @@
         "module": "ESNext",
         "moduleResolution": "bundler",
         "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "rewriteRelativeImportExtensions": true,
+        "allowImportingTsExtensions": true
     },
     "include": ["vite.config.ts", "vite.shared.ts", "vitest.config.ts"]
 }
