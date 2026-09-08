@@ -78,7 +78,7 @@
     "allowScripts": {
         "@swc/core@1.15.41": true,
         "@parcel/watcher@2.6.0": true,
-        "edgedriver@5.6.1": true,
-        "geckodriver@4.5.1": true
+        "edgedriver@6.3.0": true,
+        "geckodriver@6.1.1": true
     }
 }
